@@ -1,21 +1,27 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title>Vue App</title>
+        <title>Vue Directives</title>
         <script src="https://unpkg.com/vue"></script>
         <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
     </head>
     <body>
 
         <div id="app">
-            {{text}}
+            <div
+                v-bind:title="randNum"
+                v-if="shown"
+            >
+                Hover me over!
+            </div>
         </div>
 
         <script>
             var app = new Vue({
                 el: '#app',
                 data: {
-                    text: 'Hello, world'
+                    randNum: Math.floor(Math.random()*50) + 1,
+                    shown: false
                 }
             })
         </script>
